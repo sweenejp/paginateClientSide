@@ -44,6 +44,8 @@ export const getCientSidePaginatedData = ({
             .includes(search.value.toLowerCase())
         );
       }
+
+      return false;
     });
   }
 

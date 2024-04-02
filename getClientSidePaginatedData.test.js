@@ -195,4 +195,15 @@ describe('getClientSidePaginatedData', () => {
       },
     ]);
   });
+
+  it('does not return items that do not have the search field', () => {
+    expect(
+      getCientSidePaginatedData({
+        data,
+        pageNum: 1,
+        pageSize: 10,
+        search: { field: 'notakey', value: 'a' },
+      })
+    ).toStrictEqual([]);
+  });
 });
